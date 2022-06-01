@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+    @include('includes.nav-bar')
     @yield('content')
 </body>
 </html>
