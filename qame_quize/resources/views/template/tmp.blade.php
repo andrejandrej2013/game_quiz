@@ -10,19 +10,19 @@
 </head>
 <body>
     @include('includes.nav-bar')
-    <div class="container">
+    <!-- <div class="container"> -->
         <div class="row">
-            <div class="col" style="background-color:red;">
+            <div class="col">
             1 of 3
             </div>
-            <div class="col"style="background-color:green;">
+            <div class="col-8"style="border-left: solid;border-right: solid;">
                 @yield('content')
             
             </div>
-            <div class="col"style="background-color:blue;">
+            <div class="col">
             3 of 3
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 </html>
