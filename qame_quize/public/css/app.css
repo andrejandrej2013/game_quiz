@@ -1,0 +1,43 @@
+hr {
+  color: white;
+}
+
+body {
+  background: #262F34;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.center {
+  margin: auto;
+}
+
+.registration-form {
+  color: black;
+  min-width: 250px;
+  width: 20vw;
+  background: #f1d3bc;
+  text-align: center;
+}
+
+h1 {
+  color: #F34A4A;
+}
+
+form input {
+  border-radius: 20px;
+  border: 2px #F34A4A solid;
+}
+
+.submit-butt {
+  background: #F34A4A;
+  margin-bottom: 20px;
+}
+
+.text-left {
+  text-align: left;
+}
+

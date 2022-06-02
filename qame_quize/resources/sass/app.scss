@@ -1,0 +1,56 @@
+$bg_main : #262F34;
+$red : #F34A4A;
+$pink : #f1d3bc;
+$text : white;
+
+hr
+{
+    color: white;
+}
+body
+{
+    background: $bg_main;
+    color: $text;
+}
+a
+{
+    color: $text;
+
+}
+.center 
+{
+    margin: auto;
+    
+}
+.registration-form
+{
+    color: black;
+    min-width: 250px;
+    width: 20vw;
+    background: $pink;
+    text-align: center;
+    //border: 1px $red solid;
+
+    // -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    // -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    // box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+h1
+{
+color: $red;
+}
+form input
+{
+    border-radius: 20px;
+    border: 2px $red solid;
+}
+.submit-butt
+{
+    background: $red ;
+    margin-bottom: 20px;
+    
+}
+.text-left
+{
+    text-align: left;
+}

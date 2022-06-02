@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ Route::get('/', function () {
 Route::get('/reg', function () {
     return view('registration');
 });
+
+Route::post('/reg-form/submit', 'App\Http\Controllers\UserController@submit')->name('reg-form');

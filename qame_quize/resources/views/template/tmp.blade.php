@@ -15,7 +15,7 @@
             <div class="col">
             1 of 3
             </div>
-            <div class="col-8"style="border-left: solid;border-right: solid;">
+            <div class="col-8"style="border-left: 1px solid;border-right: 1px solid;">
                 @yield('content')
             
             </div>
