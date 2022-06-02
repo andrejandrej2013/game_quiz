@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PDFController;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -14,14 +14,39 @@ use App\Http\Controllers\PDFController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::name('user.')->group(function(){
+    Route::view('/private','private')->middleware('auth')->name('private');
+    Route::get('/login', function () {
+        if(Auth::check())
+        {
+            return redirect(route('user.private'));
+        }
+        return view('login');
+    })->name('login');
+    // Route::post('/login', 'App\Http\Controllers\UserController@submit')->name('reg-form');
+    // Route::get('/logout', [])->name('logout');
+    Route::get('/registration', function () {
+        if(Auth::check())
+        {
+            return redirect(route('user.private'));
+        }
+        return view('registration');
+    })->name('registration');
+
+    // Route::post('/registration', 'App\Http\Controllers\UserController@submit')->name('reg-form');
+
+});
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/reg', function () {
+Route::get('/registration', function () {
     return view('registration');
-})->name('reg');
+})->name('registration');
 
 Route::get('/login', function () {
     return view('login');
