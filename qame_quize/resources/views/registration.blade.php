@@ -1,10 +1,10 @@
 @extends('template.tmp')
 
 @section('content')
-<div class="center registration-form">
+<div class="center form-div">
 
     
-    <form action="{{route('reg-form')}}" method="post">
+    <form action="{{route('reg-form')}}" method="post" class="form-reg border-red cut-corners">
         @csrf
         <h1 class="reg">Sign-in</h1>
         <label for="fname">First name</label><br>
@@ -20,18 +20,18 @@
 
         
         <input type="submit" class="submit-butt" value="Submit">
+        @if($errors->any())
+        <div class="alert alert-danger slow-appearance err-mess">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul class="text-left .cut-corners">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
 
+            </ul>
+        </div>
+        @endif
+        
     </form>
-    @if($errors->any())
-    <div class="alert alert-danger slow-appearance">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul class="text-left">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-
-        </ul>
-    </div>
-    @endif
 </div>
 @endsection
