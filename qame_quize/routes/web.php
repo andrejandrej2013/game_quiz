@@ -17,10 +17,10 @@ use App\Http\Controllers\PDFController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/reg', function () {
     return view('registration');
-});
+})->name('reg');
 
 Route::post('/reg-form/submit', 'App\Http\Controllers\UserController@submit')->name('reg-form');

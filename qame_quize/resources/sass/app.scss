@@ -1,24 +1,51 @@
 $bg_main : #262F34;
 $red : #F34A4A;
 $pink : #f1d3bc;
-$text : white;
-.row{
-    --bs-gutter-x: 0;
-}
-hr
+$text : $pink;
+
+
+// tmp 
+.logo
 {
-    color: white;
+    width: 50px;
+    height: 50px;
+    border: 1px $pink solid;
+    margin-left: 20px;
+    transition: 0.2s;
+}
+.logo:hover
+{
+    border: 2px $red solid;
+
+}
+.row
+{
+    --bs-gutter-x: 0;
 }
 body
 {
     background: $bg_main;
     color: $text;
 }
-a
+a.nav-link
 {
-    color: $text;
+    color: $pink;
+}
+a.nav-link:hover
+{
+    color: $red;
+}
+header.bor-bottom
+{
+    border-bottom: 1px solid $pink;
 
 }
+//end tmp
+hr
+{
+    color: white;
+}
+
 .center 
 {
     margin: auto;
