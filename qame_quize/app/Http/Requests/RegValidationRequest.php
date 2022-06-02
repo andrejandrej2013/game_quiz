@@ -26,9 +26,9 @@ class RegValidationRequest extends FormRequest
         return [
             'fname' => 'required|min:3|max:50',
             'lname' => 'required|min:3|max:50',
+            'password' => 'required|min:8|max:50',
             'email' => 'required|email:rfc,dns',//:rfc,dns
             'date' => 'required|before:today',
-            
         ];
 
         

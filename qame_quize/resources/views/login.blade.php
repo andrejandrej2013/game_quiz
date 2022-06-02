@@ -6,20 +6,12 @@
     
     <form action="{{route('reg-form')}}" method="post" class="form-reg border-red cut-corners">
         @csrf
-        <h1 class="reg">Sign up</h1>
-        <label for="fname">First name</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name</label><br>
-        <input type="text" id="lname" name="lname"><br>
+        <h1 class="reg">Log in</h1>
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email"><br>
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password"><br>
-        <label for="date">Date of birth</label><br>
-        <input type="date" id="date" name="date"><br>
         <hr>
-
-
         
         <input type="submit" class="submit-butt" value="Submit">
         @if($errors->any())

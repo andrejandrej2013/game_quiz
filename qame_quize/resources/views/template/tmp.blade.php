@@ -16,9 +16,13 @@
             
             </div>
             <div class="col-8">
-                @include('includes.nav-bar')
+            @if(Auth::check())
                 
-                @yield('content')
+            @else 
+                @include('includes.nav-bar')
+            @endif 
+                
+            @yield('content')
             </div>
             <div class="col">
             

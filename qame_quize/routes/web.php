@@ -23,4 +23,12 @@ Route::get('/reg', function () {
     return view('registration');
 })->name('reg');
 
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/rank', function () {
+    return view('rank');
+})->name('rank');
+
 Route::post('/reg-form/submit', 'App\Http\Controllers\UserController@submit')->name('reg-form');
