@@ -2,7 +2,9 @@ $bg_main : #262F34;
 $red : #F34A4A;
 $pink : #f1d3bc;
 $text : white;
-
+.row{
+    --bs-gutter-x: 0;
+}
 hr
 {
     color: white;
