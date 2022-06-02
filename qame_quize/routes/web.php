@@ -24,7 +24,11 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 // Route::post('/login', 'App\Http\Controllers\UserController@submit')->name('reg-form');
-// Route::get('/logout', [])->name('logout');
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
 Route::get('/registration', function () {
     if(Auth::check())
     {
