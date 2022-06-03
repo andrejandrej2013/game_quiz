@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\RegValidationRequest;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -12,6 +11,11 @@ class UserController extends Controller
 {
     public function save(Request $req)
     {
+        if(Auth::check())
+        {
+            return redirect(route('private'));
+        }
+        
         $validateFields = $req->validate([
                 'fname' => 'required|min:3|max:50',
                 'lname' => 'required|min:3|max:50',
@@ -21,6 +25,14 @@ class UserController extends Controller
                 'date' => 'required|before:today'
             ]
         );
+        //check for unique email
+        if(User::where('email',$validateFields['email'])->exists())
+        {
+            return redirect(route('registration'))->withErrors([
+                'email' => 'This email already exists in the system'
+            ]);
+        }
+
         if(Auth::check())
         {
             return redirect(route('private'));

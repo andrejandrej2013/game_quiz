@@ -4,11 +4,11 @@
 <div class="center form-div">
 
     
-    <form action="{{route('reg-form')}}" method="post" class="form-reg border-red cut-corners">
+    <form action="{{route('login')}}" method="post" class="form-reg border-red cut-corners">
         @csrf
         <h1 class="reg">Log in</h1>
-        <label for="login">Login</label><br>
-        <input type="text" id="login" name="login"><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br>
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password"><br>
         <hr>
