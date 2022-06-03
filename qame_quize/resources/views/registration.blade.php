@@ -4,7 +4,7 @@
 <div class="center form-div">
 
     
-    <form action="{{route('reg-form')}}" method="post" class="form-reg border-red cut-corners">
+    <form action="{{route('registration')}}" method="post" class="form-reg border-red cut-corners">
         @csrf
         <h1 class="reg">Sign up</h1>
         <label for="fname">First name</label><br>

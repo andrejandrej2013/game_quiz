@@ -14,7 +14,7 @@ Route::get('/login', function () {
     }
     return view('login');
 })->name('login');
-Route::post('/login', [\App\Http\Controllers\LoginController::class,'login'])->name('login');
+Route::post('/login', [\App\Http\Controllers\LoginController::class,'login']);
 
 
 Route::get('/logout', function(){
@@ -31,7 +31,7 @@ Route::get('/registration', function () {
     return view('registration');
 })->name('registration');
 
-Route::post('/registration', [\App\Http\Controllers\UserController::class,'save'])->name('reg-form');
+Route::post('/registration', [\App\Http\Controllers\UserController::class,'save']);
 
 
 Route::get('/', function () {
@@ -43,5 +43,3 @@ Route::get('/', function () {
 Route::get('/rank', function () {
     return view('rank');
 })->name('rank');
-
-//Route::post('/reg-form/submit', 'App\Http\Controllers\UserController@submit')->name('reg-form');
