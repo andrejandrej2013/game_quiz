@@ -48,5 +48,11 @@ class UserController extends Controller
         ]);
 
     }
+    public function users_rank()
+    {
+        $users = User::all();
+        return view('rank', compact('users'));
+    }
+
     
 }

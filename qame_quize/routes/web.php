@@ -40,6 +40,8 @@ Route::get('/', function () {
 
 
 
-Route::get('/rank', function () {
-    return view('rank');
-})->name('rank');
+// Route::get('/rank', function () {
+//     return view('rank');
+// })->name('rank');
+
+Route::get('/rank', [\App\Http\Controllers\UserController::class,'users_rank'])->name('rank');
