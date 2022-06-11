@@ -17,16 +17,27 @@
             
             </div>
             <div class="col-8">
-            @if(Auth::check())
-                @include('includes.auth-nav-bar',['login' => auth()->user()->login, 'points' => auth()->user()->points])
-            @else 
-                @include('includes.nav-bar')
-            @endif 
-                
-            @yield('content')
+                @if(Auth::check())
+                    @include('includes.auth-nav-bar',['login' => auth()->user()->login, 'points' => auth()->user()->points])
+                @else 
+                    @include('includes.nav-bar')
+                @endif 
+                <div class='main-cont'>
+                    @yield('content')
+                </div>
+                <div class="container">
+                    <header class="bor-top">
+                        <p>The authors:</p>
+                        <ul>
+                            <li>Andrejs Grinevics</li>
+                            <li>Marija Kaniveca</li>
+                        </ul>
+                        <p><a href="{{route('admin')}}">Administrators</a></p>
+                    </head>
+                </div>
+
             </div>
             <div class="col">
-            
             </div>
         </div>
     <!-- </div> -->

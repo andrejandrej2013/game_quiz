@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 Route::view('/private','private')->middleware('auth')->name('private');
 
 
+//login
 Route::get('/login', function () {
     if(Auth::check())
     {
@@ -15,14 +16,13 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 Route::post('/login', [\App\Http\Controllers\LoginController::class,'login']);
-
-
 Route::get('/logout', function(){
     Auth::logout();
     return redirect('/');
 })->name('logout');
 
 
+//reg
 Route::get('/registration', function () {
     if(Auth::check())
     {
@@ -30,26 +30,19 @@ Route::get('/registration', function () {
     }
     return view('registration');
 })->name('registration');
-
 Route::post('/registration', [\App\Http\Controllers\UserController::class,'save']);
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
 Route::get('/', [\App\Http\Controllers\CategoriesControler::class,'categories_list'])->name('welcome');
 
 
-
-// Route::get('/rank', function () {
-//     return view('rank');
-// })->name('rank');
-
+//rank
 Route::get('/rank', [\App\Http\Controllers\UserController::class,'users_rank'])->name('rank');
-
-// Route::get('/level/{id}', function ($id) {
-//     // return $id;
-//     return view('level',['id'=>$id]);
-// })->name('level');
-
+//level
 Route::get('/level/{id}', [\App\Http\Controllers\CategoriesControler::class,'generate_level'])->name('level');
+
+
+//admin pages
+Route::get('/admin', [\App\Http\Controllers\Admin_Controller::class,'admin'])->name('admin');
+Route::get('/admin_add_foto', [\App\Http\Controllers\Admin_Controller::class,'add_foto'])->name('add_foto');
+Route::get('/admin_add_game', [\App\Http\Controllers\Admin_Controller::class,'add_game'])->name('add_game');
+
+

@@ -4,7 +4,11 @@ $pink : #b68375;  // цвет окошка
 $text : $pink;
 
 
-// tmp 
+// tmp
+.main-cont
+{
+    min-height: 200px;
+}
 .logo
 {
     width: 50px;
@@ -39,6 +43,10 @@ header.bor-bottom
 {
     border-bottom: 1px solid $pink;
 
+}
+header.bor-top
+{
+    border-top: 1px solid $pink;
 }
 //end tmp
 
