@@ -2,5 +2,7 @@
 
 @section('content')
 <h1>Level</h1>
-<div class="picture"><img src="{{asset('storage/'.$image)}}" alt="picture of game"></div>
+@foreach ($images as $image) 
+    <div class="picture"><img src="{{asset('storage/'.$image->foto)}}" alt="picture of game" class="guess-level"></div>
+@endforeach
 @endsection

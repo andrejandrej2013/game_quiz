@@ -3,14 +3,20 @@
 @section('content')
 
 <div class="center form-div">
-    <form action="{{route('add_game')}}" method="post" class="form-reg border-red cut-corners">
+    <form action="{{route('add_join')}}" method="post" class="big form-reg border-red cut-corners">
         @csrf
-        <h1>Add Game</h1>
-        <label for="name">Game name</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="description">Description</label><br>
-        <!-- <input type="text" id="description" name="description"><br> -->
-        <textarea id="description" name="description"></textarea>
+        <h1>Add Join (Game-Catecory)</h1>
+        <label for="game_id">Choose a game:</label><br>
+        <select id="game_id" name="game_id">
+            @foreach ($games as $game)
+                <option value="{{$game->id}}">{{$game->name}}</option>
+            @endforeach
+        </select><br>
+        <label>Category</label><br>
+        @foreach ($categories as $category)
+        <label for="{{$category->id}}">{{$category->category}}</label><input type="checkbox" id="category_id" name="categories_id[]" value="{{$category->id}}">
+        @endforeach
+        
         <hr>
         
         <input type="submit" class="submit-butt" value="Submit">

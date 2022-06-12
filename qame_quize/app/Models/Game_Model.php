@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Join_Categories_Models extends Model
+class Game_Model extends Model
 {
     use HasFactory;
-    protected $table = 'join_categories';
+    protected $table = 'game';
 
     protected $fillable = [
-        'game_id',
-        'category_id'
+        'name',
+        'description'
     ];
-
 }

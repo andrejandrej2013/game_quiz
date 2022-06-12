@@ -32,7 +32,7 @@
                             <li>Andrejs Grinevics</li>
                             <li>Marija Kaniveca</li>
                         </ul>
-                        <p><a href="{{route('admin')}}">Administrators</a></p>
+                        <p><a href="{{route('admin_page')}}">Administrators</a></p>
                     </head>
                 </div>
 

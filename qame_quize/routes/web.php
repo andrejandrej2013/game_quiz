@@ -41,8 +41,16 @@ Route::get('/level/{id}', [\App\Http\Controllers\CategoriesControler::class,'gen
 
 
 //admin pages
-Route::get('/admin', [\App\Http\Controllers\Admin_Controller::class,'admin'])->name('admin');
-Route::get('/admin_add_foto', [\App\Http\Controllers\Admin_Controller::class,'add_foto'])->name('add_foto');
-Route::get('/admin_add_game', [\App\Http\Controllers\Admin_Controller::class,'add_game'])->name('add_game');
+Route::get('/admin', [\App\Http\Controllers\Admin_Controller::class,'admin_page'])->name('admin_page');
+Route::get('/admin_foto', [\App\Http\Controllers\Admin_Controller::class,'foto_page'])->name('foto_page');
+Route::get('/admin_game', [\App\Http\Controllers\Admin_Controller::class,'game_page'])->name('game_page');
+Route::get('/admin_category', [\App\Http\Controllers\Admin_Controller::class,'category_page'])->name('category_page');
+Route::get('/admin_join', [\App\Http\Controllers\Admin_Controller::class,'join_page'])->name('join_page');
+
+
+Route::post('/admin_add_category', [\App\Http\Controllers\Admin_Controller::class,'add_category'])->name('add_category');
+Route::post('/admin_add_game', [\App\Http\Controllers\Admin_Controller::class,'add_game'])->name('add_game');
+Route::post('/admin_add_foto', [\App\Http\Controllers\Admin_Controller::class,'add_foto'])->name('add_foto');
+Route::post('/admin_add_join', [\App\Http\Controllers\Admin_Controller::class,'add_join'])->name('add_join');
 
 

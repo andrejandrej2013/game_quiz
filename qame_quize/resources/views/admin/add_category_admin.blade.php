@@ -1,16 +1,13 @@
 @extends('template.tmp')
 
 @section('content')
-
 <div class="center form-div">
-    <form action="{{route('add_game')}}" method="post" class="form-reg border-red cut-corners">
+    <form action="{{route('add_category')}}" method="post" class="form-reg border-red cut-corners">
         @csrf
-        <h1>Add Game</h1>
-        <label for="name">Game name</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="description">Description</label><br>
-        <!-- <input type="text" id="description" name="description"><br> -->
-        <textarea id="description" name="description"></textarea>
+        <h1>Add Category</h1>
+        <label for="category">Category name</label><br>
+        <input type="text" id="category" name="category"><br>
+        
         <hr>
         
         <input type="submit" class="submit-butt" value="Submit">
