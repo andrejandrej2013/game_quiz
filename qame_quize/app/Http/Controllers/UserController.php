@@ -50,7 +50,7 @@ class UserController extends Controller
     }
     public function users_rank()
     {
-        $users = User::all();
+        $users = User::all()->sortBy('points')->reverse();
         return view('rank', compact('users'));
     }
 
