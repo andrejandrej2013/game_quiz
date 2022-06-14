@@ -38,6 +38,7 @@ Route::get('/', [\App\Http\Controllers\CategoriesControler::class,'categories_li
 Route::get('/rank', [\App\Http\Controllers\UserController::class,'users_rank'])->name('rank');
 //level
 Route::get('/level/{id}', [\App\Http\Controllers\CategoriesControler::class,'generate_level'])->name('level');
+Route::post('/level/{id}', [\App\Http\Controllers\CategoriesControler::class,'check_answer']);
 
 
 //admin pages

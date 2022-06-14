@@ -21,35 +21,52 @@ class CategoriesControler extends Controller
 
     public function generate_level($category_id)
     {
-        // $game_id=DB::table('join_categories')
-        // ->join('contacts', 'users.id', '=', 'contacts.user_id')
-        // ->select('join_categories.game_id')
-        // ->where('category_id',$category_id)
-        // ->inRandomOrder();
-
-        // $foto = DB::table('foto')
-        // ->join('join_categories', function ($join) {
-        //     $join->on('foto.game_id', '=', 'join_categories.game_id')
-        //          ->where('join_categories.category_id','=', 1);
-        // })
-        // ->select('foto.foto');
         $images = DB::table('foto')
         ->join('join_categories','foto.game_id', '=', 'join_categories.game_id')
+        ->join('game','foto.game_id', '=', 'game.id')
         ->where('join_categories.category_id','=', $category_id)
-        ->select('foto.foto')
+        ->select('foto.foto','game.name')
         ->inRandomOrder();
         if($images->exists())
         {
             $images=$images->limit(5)->get();
-            return view('level',compact('images'));
+            $foto=array();
+            foreach($images as $image)
+            {
+                $foto[]=['game_name'=>$image->name,'image_path'=>$image->foto,'help'=>array(3,2)];
+            }
+            session()->put('level',$foto);
+            // dd(session()->get('level'));
+            return view('level',compact('category_id'));
         }
         else
         {
             return redirect(route('welcome'))->withErrors([
                 'FotoDontExists' => 'Sorry, there are no images for this category. Please, pick another one!'
             ]);
-            $images = 'some_file.jpg';//need to add random image pick
 
         }
+    }
+    public function check_answer(Request $req)
+    {
+        $rigth_answer=15;
+        $user_get = 0;
+        unset($req['_token']);
+        $level =session()->get('level');
+        foreach ($req->all() as $key => $answer) {
+            // dd($answer);
+            if(strtolower($level[$key]['game_name'])==strtolower($answer))
+            {
+                $user_get += $rigth_answer-5*(count($level[$key]['help']));//need to check --no more than 3 helps
+            }
+            else
+            {
+                echo "Right answer of ".$key." image is : ".$level[$key]['game_name'];
+            }
+
+        }
+
+        session()->flush();
+        return dd($req->all());
     }
 }
