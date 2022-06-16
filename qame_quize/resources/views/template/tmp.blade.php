@@ -18,7 +18,7 @@
             </div>
             <div class="col-8">
                 @if(Auth::check())
-                    @include('includes.auth-nav-bar',['login' => auth()->user()->login, 'points' => auth()->user()->points])
+                    @include('includes.auth-nav-bar')
                 @else 
                     @include('includes.nav-bar')
                 @endif 
