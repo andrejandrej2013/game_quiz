@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Join_Categories_Models;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class CategoriesControler extends Controller
@@ -68,6 +70,7 @@ class CategoriesControler extends Controller
         $user_get = 0;
         unset($req['_token']);
         $level =session()->get('level');
+        $wrongs=array();
         foreach ($req->all() as $key => $answer) {
             // dd($answer);
             if(strtolower($level[$key]['game_name'])==strtolower($answer))
@@ -76,12 +79,17 @@ class CategoriesControler extends Controller
             }
             else
             {
-                echo "Right answer of ".$key." image is : ".$level[$key]['game_name'];
+                $wrongs[($key+1)]=" Right answer of ".($key+1)." image is : ".$level[$key]['game_name'].".";
             }
 
         }
-
-        session()->flush();
-        return dd($req->all());
+        if(Auth::check())
+        {
+            auth()->user()->points+=$user_get;
+            Auth::user()->save();
+        }
+        // session()->flush();
+        return view('result', compact('user_get','wrongs'));
+        // return redirect(route('result',compact('user_get')));
     }
 }

@@ -55,3 +55,4 @@ Route::post('/admin_add_foto', [\App\Http\Controllers\Admin_Controller::class,'a
 Route::post('/admin_add_join', [\App\Http\Controllers\Admin_Controller::class,'add_join'])->name('add_join');
 
 
+

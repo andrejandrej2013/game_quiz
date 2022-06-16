@@ -31,6 +31,6 @@
 
 <ul>
     <hr>
-    <li><a href="{{ url()->previous() }}"> Go back</a></li>
+    <li><a href="{{ route('admin_page') }}"> Go back</a></li>
 </ul>
 @endsection
