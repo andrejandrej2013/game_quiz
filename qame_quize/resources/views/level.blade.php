@@ -10,6 +10,4 @@
 @endforeach
     <input type="submit">
     </form>
-    @if()
-    <div class="alert alert-success text-center"></div>
 @endsection

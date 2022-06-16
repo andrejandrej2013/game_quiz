@@ -49,6 +49,22 @@ class CategoriesControler extends Controller
     }
     public function check_answer(Request $req)
     {
+        /* session keep
+        game=>
+        [
+            0=>
+            [
+                game_name=>...
+                image_path=>...
+                help=>...(places of letters which were given)
+            ]
+            1=>
+            [
+                -//-
+            ]
+            ...
+        ]
+        */
         $rigth_answer=15;
         $user_get = 0;
         unset($req['_token']);
