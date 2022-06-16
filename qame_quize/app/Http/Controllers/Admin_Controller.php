@@ -74,9 +74,10 @@ class Admin_Controller extends Controller
         ([
             'category' => 'required|min:2|max:50',
         ]);
+        $validateFields['category'] = strtolower($validateFields['category']);
         if(CategoriesModel::where('category',$validateFields['category'])->exists())
         {
-            return redirect(route('add_category_page'))->withErrors([
+            return redirect(route('category_page'))->withErrors([
                 'categoryExist' => 'This category already exists in the system'
             ]);
         }
@@ -87,11 +88,10 @@ class Admin_Controller extends Controller
             return redirect(route('welcome'))->withErrors($err);
         }
         
-        $validateFields['category'] = ucwords($validateFields['category']);
         $categories = CategoriesModel::create($validateFields);
         if($categories)
         {
-            return redirect(route('admin_page'));
+            return redirect(route('category_page'));
         }
         return redirect(route('login'))->withErrors([
             'formError'=>'An error occurred while saving the category'
@@ -105,9 +105,10 @@ class Admin_Controller extends Controller
             'name' => 'required|min:2|max:50',
             'description' => 'max:250'
         ]);
+        $validateFields['name'] = strtolower($validateFields['name']);
         if(Game_Model::where('name',$validateFields['name'])->exists())
         {
-            return redirect(route('add_game_page'))->withErrors([
+            return redirect(route('game_page'))->withErrors([
                 'gameExist' => 'This game already exists in the system'
             ]);
         }
@@ -115,11 +116,10 @@ class Admin_Controller extends Controller
         $err=$this->check_right();
         if(!empty($err))
             return redirect(route('welcome'))->withErrors($err);
-        $validateFields['name'] = ucwords($validateFields['name']);
         $categories = Game_Model::create($validateFields);
         if($categories)
         {
-            return redirect(route('admin_page'));
+            return redirect(route('game_page'));
         }
         return redirect(route('login'))->withErrors([
             'formError'=>'An error occurred while saving the game'
@@ -142,7 +142,7 @@ class Admin_Controller extends Controller
             'foto' => $path,
             'game_id' => $validateFields['game_id']
         ]);
-        return redirect(route('admin_page'));
+        return redirect(route('foto_page'));
     }
     public function add_join(Request $req)
     {
@@ -163,7 +163,7 @@ class Admin_Controller extends Controller
                 ]);
             }
         }
-        return redirect(route('admin_page'));
+        return redirect(route('join_page'));
 
     }
     

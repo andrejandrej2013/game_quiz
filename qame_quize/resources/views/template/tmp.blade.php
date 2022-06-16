@@ -22,7 +22,7 @@
                 @else 
                     @include('includes.nav-bar')
                 @endif 
-                <div class='main-cont'>
+                <div class='container main-cont'>
                     @yield('content')
                 </div>
                 <div class="container">

@@ -14,7 +14,6 @@ class CategoriesControler extends Controller
     public function categories_list()
     {
         $categories = CategoriesModel::all();
-        // return view('welcome', compact('categories'));
         return view('welcome',compact('categories'));
     }
 
