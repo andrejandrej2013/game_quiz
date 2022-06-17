@@ -13,9 +13,11 @@
         </ul>
     </div>
 @endif
-<ul>
-    @foreach ($categories->all() as $category)
-        <li><a href="{{route('level',$category->id)}}">{{ ucwords($category->category)}}</a></li>
-    @endforeach
-</ul>
+
+    <div class="categories">
+        @foreach ($categories->all() as $category)
+            <div class="list-categories"><a href="{{route('level',$category->id)}}"># {{ ucwords($category->category)}}</a></div>
+        @endforeach
+    </div>
+
 @endsection

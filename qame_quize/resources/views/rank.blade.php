@@ -2,14 +2,18 @@
 
 @section('content')
     <h1>Rank</h1>
-    <ol>
-    @foreach($users as $user)
-        <li>
-            <p><tr>
-                <tр>{{$user->points}} </td>
-                <td>{{$user->login}} </td>
-            </tr></p>
-        </li>
-    @endforeach
-    <ol>
+    <table class="ranktable">
+        <tr>
+            <th>No</th>
+            <th>Nickname</th>
+            <th>Points</th>
+        </tr>
+        @foreach($users as $user)
+        <tr>
+            <td> No1</td>
+            <td>{{$user->login}} </td>
+            <td>{{$user->points}} </td>
+        </tr>
+        @endforeach
+    </table>
 @endsection

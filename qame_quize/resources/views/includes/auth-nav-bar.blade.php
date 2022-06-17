@@ -4,8 +4,9 @@
     <a href="{{ route('welcome') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"><img src="{{URL('/logo.png')}}" alt="logo" class="rounded-circle logo"></a>
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="{{route('rank')}}" class="nav-link">${{auth()->user()->points}}</a></li>
-      <li class="nav-item"><a href="{{route('logout')}}" class="nav-link">Logout</a></li>
       <li class="nav-item"><a href="{{route('private')}}" class="nav-link">{{auth()->user()->login}}</a></li>
+      <li class="nav-item"><a href="{{route('logout')}}" class="nav-link">Logout</a></li>
+      
 
       <!-- <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Log in</a></li>
       <li class="nav-item"><a href="{{ route('registration') }}" class="nav-link">Sign up</a></li> -->

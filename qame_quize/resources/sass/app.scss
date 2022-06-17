@@ -1,6 +1,6 @@
 $bg_main : #2f496e; // фон
 $red : #f8f2e9;  // цвет текста
-$pink : #b68375;  // цвет окошка
+$pink : #b88577;  // цвет окошка
 $text : $pink;
 
 
@@ -64,7 +64,7 @@ header.bor-top
 
 h1
 {
-    color: $red;
+    color: $pink;
 }
 form input
 {
@@ -103,7 +103,67 @@ form input
     margin-bottom: 0;
 }
 
-//end rg-form
+//categories
+.list-categories{
+    display: flex;
+    flex-direction: row;
+    display:inline-block;
+}
+a{
+    text-decoration: none;
+    color: #2f496e;
+}
+a:hover {
+    color: $pink;
+}
+ul {
+    list-style-type: none;
+}
+
+.list-categories {
+    width: fit-content;
+    border: 2px solid $pink;
+    background-color: #fcf9f5;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 6px;
+}
+//end categories
+
+//admin
+.adminbuttons{
+    color: $pink;
+}
+//end admin
+
+//rank
+.ranktable{
+    border-width: 1200px;
+    color: #2f496e;
+    border-collapse: collapse;
+    background-color: #fcf9f5;
+}
+td, th {
+    border: 2px solid $pink;
+    padding: 0.5rem;
+    text-align: left;
+  }
+//end rank
+
+
+//privat user page
+.userpage {
+    color: #2f496e;
+    border-collapse: collapse;
+    background-color: #fcf9f5;
+}
+
+td, th {
+    border: 2px solid $pink;
+    padding: 0.5rem;
+    text-align: left;
+  }
+//end user page
 
 //level
 .guess-level
