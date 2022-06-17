@@ -49,7 +49,7 @@ header.bor-top {
 }
 
 h1 {
-  color: #b88577;
+  color: #f8f2e9;
 }
 
 form input {
@@ -116,7 +116,11 @@ ul {
   margin: 6px;
 }
 
-.adminbuttons {
+.adminbuttons a {
+  color: #b88577;
+}
+
+#admin-button {
   color: #b88577;
 }
 

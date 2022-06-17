@@ -33,7 +33,7 @@
                             <li>Marija Kaniveca</li>
                         </ul>
                         @if(Auth::check() and auth()->user()->admin==true)
-                        <p><a href="{{route('admin_page')}}">Administrators</a></p>
+                        <p><a id="admin-button" href="{{route('admin_page')}}">Administrators</a></p>
                         @endif
                     </head>
                 </div>

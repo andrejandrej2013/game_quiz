@@ -10,7 +10,7 @@
         </tr>
         @foreach($users as $user)
         <tr>
-            <td> No1</td>
+            <th> 1.</td>
             <td>{{$user->login}} </td>
             <td>{{$user->points}} </td>
         </tr>
