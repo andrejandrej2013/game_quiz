@@ -8,9 +8,9 @@
             <th>Nickname</th>
             <th>Points</th>
         </tr>
-        @foreach($users as $user)
+        @foreach($users as $key =>$user)
         <tr>
-            <th> 1.</td>
+            <th> {{$key+1}}.</td>
             <td>{{$user->login}} </td>
             <td>{{$user->points}} </td>
         </tr>

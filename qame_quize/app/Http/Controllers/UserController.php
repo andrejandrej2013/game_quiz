@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -21,7 +22,7 @@ class UserController extends Controller
                 'lname' => 'required|min:3|max:50',
                 'login' => 'required|min:8|max:50',
                 'password' => 'required|min:8|max:50',
-                'email' => 'required|email:rfc,dns',
+                'email' => 'required|email',
                 'date' => 'required|before:today'
             ]
         );
@@ -50,7 +51,9 @@ class UserController extends Controller
     }
     public function users_rank()
     {
-        $users = User::all()->sortBy('points')->reverse();
+        $users = DB::table('users')->select('login', 'points')->orderBy('points', 'desc')->get();
+
+
         return view('rank', compact('users'));
     }
 
