@@ -21,10 +21,11 @@ services:
       dockerfile: _docker/app/Dockerfile
     volumes:
       - ./:/var/www
+    user: 1000:1000
     depends_on:
       - db
     container_name: app
-    
+
   db:
     image: mysql:latest
     restart: always
