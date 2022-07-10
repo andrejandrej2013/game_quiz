@@ -1,194 +1,71 @@
-$bg_main : #2f496e; // фон
-$red : #f8f2e9;  // цвет текста
-$pink : #b88577;  // цвет окошка
-$text : $pink;
+$light_dark : #262F34;
+$dark : #171b1d;
+$red : #F34A4A;
+$cream : #F1D3BC;
 
-
-// tmp
-.main-cont
-{
-    min-height: 200px;
+html,body{
+    position: relative;
+    background: $light_dark;
+    height: 100%;
 }
-.logo
-{
-    width: 50px;
-    height: 50px;
-    border: 1px $pink solid;
-    margin-left: 20px;
-    transition: 0.2s;
-}
-.logo:hover
-{
-    border: 2px $red solid;
-
-}
-.row
-{
+.row{
     --bs-gutter-x: 0;
 }
-body
-{
-    background: $bg_main;
-    color: $text;
-}
-a.nav-link
-{
-    color: $pink;
-}
-a.nav-link:hover
-{
-    color: $red;
-}
-header.bor-bottom
-{
-    border-bottom: 1px solid $pink;
-
-}
-header.bor-top
-{
-    border-top: 1px solid $pink;
-}
-//end tmp
-
-//reg-form
-.center 
-{
-    margin: auto;
-    
-}
-.form-div
-{
-    width: 20vw;
-    text-align: center;
+#row{
+    min-height: calc(100vh - 45.5px - 88px);// !!! if footer and header height change than we need to change them here too
 }
 
-h1
-{
-    color: $red;
+.red{
+    background: $red;
 }
-form input
-{
-    border-radius: 20px;
-    border: 2px $red solid;
-}
-.submit-butt
-{
-    background: $red ;
-    margin-bottom: 20px;
-    
-}
-.text-left
-{
-    text-align: left;
-}
-.cut-corners
-{
-    border-radius: 20px;
-}
-.border-red
-{
-    border: 3px solid $red;
-}
-.form-reg
-{
-    margin:20px 0;
-    color: $red;
-    min-width: 250px;
-    background: $pink;
-}
-.err-mess
-{
-    border-radius: 0 0 20px 20px;
-
-    margin-bottom: 0;
-}
-
-//categories
-.list-categories{
-    display: flex;
-    flex-direction: row;
-    display:inline-block;
-}
-a{
-    text-decoration: none;
-    color: #2f496e;
-}
-a:hover {
-    color: $pink;
-}
-ul {
-    list-style-type: none;
-}
-
-.list-categories {
-    width: fit-content;
-    border: 2px solid $pink;
-    background-color: #fcf9f5;
-    border-radius: 8px;
-    padding: 2px;
-    margin: 6px;
-}
-//end categories
-
-//admin
-.adminbuttons a{
-    color: $pink;
-}
-#admin-button{
-    color: $pink;
-}
-//end admin
-
-//rank
-.ranktable{
-    border-width: 1200px;
-    color: #2f496e;
-    border-collapse: collapse;
-    background-color: #fcf9f5;
-}
-td, th {
-    border: 2px solid $pink;
-    padding: 0.5rem;
-    text-align: left;
-  }
-//end rank
-
-
-//privat user page
-.userpage {
-    color: #2f496e;
-    border-collapse: collapse;
-    background-color: #fcf9f5;
-}
-
-td, th {
-    border: 2px solid $pink;
-    padding: 0.5rem;
-    text-align: left;
-  }
-//end user page
-
-//level
-.guess-level
-{
-    width: 200px;
-    height: 200px;
-}
-.picture
-{
-    margin:10px 10vw;
+.test-block{
+    background: yellow;
+    width: 100%;
+    height: 20px;
 
 }
-//end level
-
-//add_admin
-
-.file-upload
-{
-    width: 15vw;
-    min-width: 200px;
-    margin: 10px auto;
+//change size
+@media screen and (max-width: 1140px) {
+    .side-rank {
+        display: none;
+    }
 }
+//end change size
 
-// end add_admin
+//nav
+
+    .head{
+        font-size: 25px;
+        font-weight: bold;
+        color: $cream;
+    }
+    .nav-link{
+        color: $cream;
+        padding: .0rem 1rem;
+    }
+    .nav-link:hover{
+        color: $light_dark;
+    }
+//end nav
+
+//side-rank
+    .side-rank{
+        background: $dark;
+    }
+
+
+//end side-rank
+
+//bottom
+    footer{
+        background-color: black;
+        width: 100%;
+        ul{
+            margin-bottom: 0;
+        }
+
+    }
+
+//end bottom
+
 

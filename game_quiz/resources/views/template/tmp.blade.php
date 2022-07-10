@@ -7,41 +7,42 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Game Quize</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
     <!-- <div class="container"> -->
-        <div class="row">
-            <div class="col">
-            
-            </div>
-            <div class="col-8">
-                @if(Auth::check())
-                    @include('includes.auth-nav-bar')
-                @else 
-                    @include('includes.nav-bar')
-                @endif 
-                <div class='container main-cont'>
-                    @yield('content')
-                </div>
-                <div class="container">
-                    <header class="bor-top">
-                        <p>The authors:</p>
-                        <ul>
-                            <li>Andrejs Grinevics</li>
-                            <li>Marija Kaniveca</li>
-                        </ul>
-                        @if(Auth::check() and auth()->user()->admin==true)
-                        <p><a id="admin-button" href="{{route('admin_page')}}">Administrators</a></p>
-                        @endif
-                    </head>
-                </div>
-
-            </div>
-            <div class="col">
-            </div>
+    @if(Auth::check())
+        @include('includes.auth-nav-bar')
+    @else
+        @include('includes.nav-bar')
+    @endif
+    <div class="row" id="row">
+        <div class="col-2 side-rank">
+            <div class="side-rank">here will be top 10 players</div>
         </div>
+        <div class="col">
+
+            <div class='container main-cont'>
+                @yield('content')
+            </div>
+
+        </div>
+    </div>
+    <footer class="bottom">
+        <div class="container">
+            <header class="bor-top">
+                <p>The authors:</p>
+                <ul>
+                    <li>Andrejs Grinevics</li>
+                    <li>Marija Kaniveca</li>
+                </ul>
+                @if(Auth::check() and auth()->user()->admin==true)
+                    <p><a id="admin-button" href="{{route('admin_page')}}">Administrators</a></p>
+                @endif
+            </header>
+        </div>
+    </footer>
     <!-- </div> -->
 </body>
 </html>

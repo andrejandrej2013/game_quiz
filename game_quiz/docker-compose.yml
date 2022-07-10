@@ -39,3 +39,9 @@ services:
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     container_name: game_quiz_db
 
+  npm:
+    image: node:14
+    working_dir: /var/www/my_shiny_project/
+    entrypoint: ["npm"]
+    volumes:
+      - "./:/var/www/my_shiny_project/"
